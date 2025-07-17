@@ -1,0 +1,9 @@
+
+
+.section1 label, .section1 input, .section1 textarea{
+    display: block;
+    width: 100%;
+}
+.section1 input {
+    margin-bottom: 10px;
+}
