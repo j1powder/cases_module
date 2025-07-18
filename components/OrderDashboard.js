@@ -36,10 +36,10 @@ const OrderDashboard = () => {
   return (
     <div className="min-h-screen bg-gray-900">
       {/* Header */}
-      <div className="bg-white shadow-sm ">
+      <div className="bg-gray-850 shadow-sm border-gray-200 outline outline-offset-2 outline-gray-200 ">
         <div className="max-w-7xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-gray-900">New Cases Dashboard</h1>
-          <p className="text-gray-600 mt-2">Manage and track all cases in one place</p>
+          <h1 className="text-3xl font-bold text-gray-200">New Cases Dashboard</h1>
+          <p className="text-gray-400 mt-2">Manage and track all cases in one place</p>
         </div>
       </div>
 
