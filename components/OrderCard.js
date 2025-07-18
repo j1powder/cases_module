@@ -4,7 +4,7 @@
 import React from 'react';
 //import { Order } from '../types/order';
 import { Clock, User, Building, Flag, Calendar } from 'lucide-react';
-
+import { Card } from 'primereact/card';
 // interface OrderCardProps {
 //   order: Order;
 //   onClick: (order: Order) => void;
@@ -35,17 +35,18 @@ const OrderCard = ({ order, onClick }) => {
   };
 
   return (
-    <div
-      className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 cursor-pointer border border-gray-200 hover:border-blue-300"
+    <Card
+      className="bg-white transition-shadow duration-200 cursor-pointer"
       onClick={() => onClick(order)}
+      style={{backgroundColor:'#374151'}}
     >
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <h3 className="text-lg font-semibold text-gray-100 mb-2">
               {order.subject}
             </h3>
-            <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+            <div className="flex items-center gap-2 text-sm text-gray-200 mb-2">
               <Building size={16} />
               <span>{order.companyName}</span>
             </div>
@@ -61,25 +62,25 @@ const OrderCard = ({ order, onClick }) => {
         </div>
 
         <div className="space-y-2 mb-4">
-          <div className="flex items-center gap-2 text-sm text-gray-600">
+          <div className="flex items-center gap-2 text-sm text-gray-200">
             <User size={16} />
             <span>Contact: {order.contactName}</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-gray-600">
+          <div className="flex items-center gap-2 text-sm text-gray-200">
             <Flag size={16} />
             <span>Type: {order.orderType}</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-gray-600">
+          <div className="flex items-center gap-2 text-sm text-gray-200">
             <User size={16} />
             <span>Handler: {order.handlingPerson}</span>
           </div>
         </div>
 
-        <div className="text-sm text-gray-600 mb-4 line-clamp-2">
+        <div className="text-sm text-gray-300 mb-4 line-clamp-2">
           {order.description}
         </div>
 
-        <div className="flex items-center justify-between text-xs text-gray-500 pt-4 border-t">
+        <div className="flex items-center justify-between text-xs text-gray-400 pt-4 border-t">
           <div className="flex items-center gap-1">
             <Calendar size={14} />
             <span>Created: {formatDate(order.createdAt)}</span>
@@ -90,7 +91,7 @@ const OrderCard = ({ order, onClick }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

@@ -22,13 +22,13 @@ const Orders = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm border-b">
+      <nav className="bg-gray-800 text-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-8">
               <div className="flex items-center gap-2">
                 <Package size={32} className="text-blue-600" />
-                <h1 className="text-xl font-bold text-gray-900">CaseFlow</h1>
+                <h1 className="text-xl font-bold ">CaseFlow</h1>
               </div>
               
               <div className="flex items-center gap-6">
@@ -37,7 +37,7 @@ const Orders = () => {
                   className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${
                     currentView === 'dashboard' 
                       ? 'bg-blue-100 text-blue-700' 
-                      : 'text-gray-600 hover:text-gray-900'
+                      : 'text-gray-300 hover:text-gray-900'
                   }`}
                 >
                   <Package size={16} />

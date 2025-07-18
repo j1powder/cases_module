@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useOrders } from '../hooks/useOrders';
 import OrderDetails from './OrderDetails';
 import OrderCard from './OrderCard';
+import { Card } from 'primereact/card';
 
 import { Search, Filter, BarChart3, TrendingUp, Clock, CheckCircle } from 'lucide-react';
 
@@ -33,9 +34,9 @@ const OrderDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-900">
       {/* Header */}
-      <div className="bg-white shadow-sm border-b">
+      <div className="bg-white shadow-sm ">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <h1 className="text-3xl font-bold text-gray-900">New Cases Dashboard</h1>
           <p className="text-gray-600 mt-2">Manage and track all cases in one place</p>
@@ -45,57 +46,57 @@ const OrderDashboard = () => {
       {/* Stats Cards */}
       <div className="max-w-7xl mx-auto px-4 py-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <Card className="p-6" style={{backgroundColor:'#374151'}} >
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Total Orders</p>
-                <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
+                <p className="text-sm text-white">Total Orders</p>
+                <p className="text-2xl font-bold text-white">{stats.total}</p>
               </div>
               <div className="bg-blue-100 p-3 rounded-full">
                 <BarChart3 size={24} className="text-blue-600" />
               </div>
             </div>
-          </div>
+          </Card>
 
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <Card className="bg-white p-6 " style={{backgroundColor:'#374151'}}>
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Pending</p>
+                <p className="text-sm text-white">Pending</p>
                 <p className="text-2xl font-bold text-yellow-600">{stats.pending}</p>
               </div>
               <div className="bg-yellow-100 p-3 rounded-full">
                 <Clock size={24} className="text-yellow-600" />
               </div>
             </div>
-          </div>
+          </Card>
 
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <Card className="bg-white p-6" style={{backgroundColor:'#374151'}}>
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">In Progress</p>
+                <p className="text-sm text-white">In Progress</p>
                 <p className="text-2xl font-bold text-blue-600">{stats.inProgress}</p>
               </div>
               <div className="bg-blue-100 p-3 rounded-full">
                 <TrendingUp size={24} className="text-blue-600" />
               </div>
             </div>
-          </div>
+          </Card>
 
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <Card className="bg-white p-6 " style={{backgroundColor:'#374151'}}>
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-gray-600">Completed</p>
+                <p className="text-sm text-white">Completed</p>
                 <p className="text-2xl font-bold text-green-600">{stats.completed}</p>
               </div>
               <div className="bg-green-100 p-3 rounded-full">
                 <CheckCircle size={24} className="text-green-600" />
               </div>
             </div>
-          </div>
+          </Card>
         </div>
 
         {/* Filters */}
-        <div className="bg-white p-6 rounded-lg shadow-sm border mb-6">
+        <Card className="bg-white p-6  mb-6" style={{backgroundColor:'#374151'}}>
           <div className="flex flex-col lg:flex-row gap-4">
             <div className="flex-1">
               <div className="relative">
@@ -116,7 +117,7 @@ const OrderDashboard = () => {
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
                 >
                   <option value="all">All Status</option>
                   <option value="pending">Pending</option>
@@ -130,7 +131,7 @@ const OrderDashboard = () => {
               <select
                 value={priorityFilter}
                 onChange={(e) => setPriorityFilter(e.target.value)}
-                className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="text-white px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="all">All Priority</option>
                 <option value="low">Low</option>
@@ -140,7 +141,7 @@ const OrderDashboard = () => {
               </select>
             </div>
           </div>
-        </div>
+        </Card>
 
         {/* Orders Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
